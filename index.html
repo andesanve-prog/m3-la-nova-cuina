@@ -55,6 +55,13 @@ button{border:0;border-radius:10px;cursor:pointer}.miniBtn{padding:7px 10px;back
 .tiempoTotal{margin-top:14px;padding:11px 14px;border-radius:8px;background:#222;color:#fff;font-weight:700;text-align:center}
 @media(max-width:700px){.horarioGrid{grid-template-columns:1fr}}
 .notifBadge{display:inline-flex;min-width:19px;height:19px;padding:0 5px;align-items:center;justify-content:center;border-radius:999px;background:#e53935;color:#fff;font-size:11px;font-weight:800;margin-left:6px}</style>
+
+<meta name="theme-color" content="#111111">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="M3 LA NOVA CUINA">
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./icon-180.png">
 </head>
 <body>
 <section id="loginPage" class="loginPage">
@@ -1497,6 +1504,16 @@ document.addEventListener('click',delegatedSolicitudesClick,true);
     side.querySelectorAll('.menu button').forEach(function(b){b.addEventListener('click',closeMobileMenu);});
   });
 })();
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('./sw.js').catch(function (err) {
+      console.warn('PWA service worker:', err);
+    });
+  });
+}
 </script>
 </body>
 </html>
